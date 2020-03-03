@@ -29,10 +29,10 @@ Expected development time needed, splitted in features / pages:
 - [x] Test on mac
 - [x] git flow init: ~5m
   - [x] Setup `develop` branch
-- Project setup: ~30m
-  - Init quasar project.
-  - Run dev.
-  - Everything ok? git push.
+- [x] Project setup: ~30m
+  - [x] Init quasar project.
+  - [x] Run dev.
+  - [x] Everything ok? git push.
 - Setup Layout, router, create blank pages: ~45m
   - Setup layout
   - Setup splash page
