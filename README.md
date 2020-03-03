@@ -2,6 +2,18 @@
 
 Temporary project aimed to test backend and frontend efficiency against development time.
 
+### How to install
+
+- Clone repository
+- `npm install -g @quasar/cli`
+- `npm install` (run un the mvc project)
+
+### Test / dev
+- `npm run dev`
+
+### Build / deploy SPA
+- `npm run build`
+
 ### FRONTEND REPOSITORY
 
 Target Framework: Vue.JS with QUASAR (https://quasar.dev/)
@@ -9,7 +21,7 @@ Target Framework: Vue.JS with QUASAR (https://quasar.dev/)
 Application layout:
 - DRAWER MENU (sidebar)
 - TOP NAVBAR
-- BOTTOM NAVBAR
+- <strike>BOTTOM NAVBAR</strike>
 
 Planned pages:
 - Splash (`/`)
@@ -33,22 +45,24 @@ Expected development time needed, splitted in features / pages:
   - [x] Init quasar project.
   - [x] Run dev.
   - [x] Everything ok? git push.
-- [ ] Setup Layout, router, create blank pages: ~45m
+- [x] Setup Layout, router, create blank pages: ~45m
   - [x] Setup layout
-  - Setup splash page
-  - Setup todos page
-  - Setup todos edit page.
+  - [x] Setup splash page (AKA index). Definitive path: ''.
+  - [x] Setup todos page. Definitive path: '/todos'.
+  - [x] Setup todos edit page. Definitive path: '/todos/:id' and '/todos/new'
 - Setup fake MVC services: ~30m
-  - Fake GET `todos` endpoint call
-  - Fake GET `todos/{id}` endpoint call
-  - Fake POST `todos/` endpoint call
-  - Fake PUT `todos/{id}` endpoint call
-  - Fake DELETE `todos/{id}` endpoint call
-- Splash UI and page: ~10m
+  - [x] Fake GET `todos` endpoint call
+  - [x] Fake GET `todos/{id}` endpoint call
+  - [x] Fake POST `todos/` endpoint call
+  - [x] Fake PUT `todos/{id}` endpoint call
+  - [x] Fake DELETE `todos/{id}` endpoint call
+- [ ] Splash UI and page: ~10m
 - Todos UI page: ~15m
-  - List items
-  - Allow checkbox
-    - Checkbox check / uncheck action
+  - [x] List items
+  - [x] Allow checkbox
+    - [x] Checkbox check / uncheck action
 - Todos edit UI page: ~30m
-  - Toolbar actions (save, edit, delete and so on)
-  - FormLike experience (no validation, tho)
+  - [x] Toolbar actions (save, edit, delete and so on)
+  - [x] FormLike experience
+
+Total time currently spent: ~1h 30m
