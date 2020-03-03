@@ -22,3 +22,32 @@ Planned pages:
   - if id is null
     - [action] Can create a new record. Call to GET `/todos/new`. Should return an empty record with the following default values:
       - description: "Placeholder MVC TODO DESCRIPTION".
+    - [action] Can SAVE a new record. Call to POST `/todos`.
+
+Expected development time needed, splitted in features / pages:
+
+- Project setup: ~30m
+  - Init quasar project.
+  - Run dev.
+  - Everything ok? git push.
+- git flow init: ~5m
+  - Setup `develop` branch
+- Setup Layout, router, create blank pages: ~45m
+  - Setup layout
+  - Setup splash page
+  - Setup todos page
+  - Setup todos edit page.
+- Setup fake MVC services: ~30m
+  - Fake GET `todos` endpoint call
+  - Fake GET `todos/{id}` endpoint call
+  - Fake POST `todos/` endpoint call
+  - Fake PUT `todos/{id}` endpoint call
+  - Fake DELETE `todos/{id}` endpoint call
+- Splash UI and page: ~10m
+- Todos UI page: ~15m
+  - List items
+  - Allow checkbox
+    - Checkbox check / uncheck action
+- Todos edit UI page: ~30m
+  - Toolbar actions (save, edit, delete and so on)
+  - FormLike experience (no validation, tho)
