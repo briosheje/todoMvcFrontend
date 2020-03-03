@@ -26,6 +26,7 @@ Planned pages:
 
 Expected development time needed, splitted in features / pages:
 
+- Test on mac
 - Project setup: ~30m
   - Init quasar project.
   - Run dev.
