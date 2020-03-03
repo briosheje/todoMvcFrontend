@@ -33,8 +33,8 @@ Expected development time needed, splitted in features / pages:
   - [x] Init quasar project.
   - [x] Run dev.
   - [x] Everything ok? git push.
-- Setup Layout, router, create blank pages: ~45m
-  - Setup layout
+- [ ] Setup Layout, router, create blank pages: ~45m
+  - [x] Setup layout
   - Setup splash page
   - Setup todos page
   - Setup todos edit page.
