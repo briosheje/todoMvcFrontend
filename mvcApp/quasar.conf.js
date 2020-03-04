@@ -1,6 +1,8 @@
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
 
+const envConfig = require('./envConfig.json')
+
 module.exports = function (ctx) {
   return {
     // app boot file (/src/boot)
@@ -59,7 +61,9 @@ module.exports = function (ctx) {
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       vueRouterMode: 'hash', // available values: 'hash', 'history'
-
+      env: {
+        API_BASE_URL: JSON.stringify(envConfig.API_BASE_URL)
+      },
       // showProgress: false,
       // gzip: true,
       // analyze: true,
