@@ -1,6 +1,6 @@
 import Vue from 'vue'
-import axios from 'axios'
 import mockData from './mock'
+import { restRequest } from './rest/request'
 
 /**
  * holds the default endpoints.
@@ -13,19 +13,19 @@ const endpoints = {
  * Holds the references to each service.
  */
 const services = {
-  testEnv: true,
+  testEnv: false,
   todos: {
     get (id) {
       if (services.testEnv) return JSON.parse(JSON.stringify(mockData.todos.list.find(item => id === item.id)))
-      return axios.get(`${endpoints.todos}/${id}`)
+      return restRequest(`${endpoints.todos}/${id}`, 'GET')
     },
     new () {
       if (services.testEnv) return { completed: false }
-      else return axios.get(`${endpoints.todos}/new`)
+      else return restRequest(`${endpoints.todos}/new`, 'GET')
     },
     list () {
       if (services.testEnv) return JSON.parse(JSON.stringify(mockData.todos.list))
-      return axios.get(`${endpoints.todos}/`)
+      return restRequest(`${endpoints.todos}/`, 'GET')
     },
     save (record) {
       if (services.testEnv) {
@@ -34,7 +34,7 @@ const services = {
         mockData.todos.list.push(record)
         return record
       } else {
-        return axios.post(`${endpoints.todos}/`, record)
+        return restRequest(`${endpoints.todos}/`, 'POST', record)
       }
     },
     update (id, record) {
@@ -43,7 +43,7 @@ const services = {
         mockData.todos.list[index] = record
         return true
       }
-      return axios.put(`${endpoints.todos}/${id}`, record)
+      return restRequest(`${endpoints.todos}/${id}`, 'PUT', record)
     },
     delete (id) {
       if (services.testEnv) {
@@ -51,7 +51,7 @@ const services = {
         mockData.todos.list.splice(index, 1)
         return true
       }
-      return axios.delete(`${endpoints.todos}/${id}`)
+      return restRequest(`${endpoints.todos}/${id}`, 'DELETE')
     }
   }
 }
