@@ -3,6 +3,7 @@
     <form
       @submit.prevent.stop="saveOrUpdateRecord"
       @reset.prevent.stop="resetRecord"
+      v-if="record"
       class="q-gutter-md"
     >
       <q-toolbar class="bg-primary text-white">

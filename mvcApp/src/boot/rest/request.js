@@ -3,11 +3,14 @@ import {
   Loading, Dialog
 } from 'quasar'
 
+console.log('process.env is', process.env)
+const baseUrl = process.env.API_BASE_URL
+
 /**
  * Default axios instance item.
  */
 const axiosInstance = axios.create({
-  baseURL: ''
+  baseURL: baseUrl
 })
 
 // add an interceptor to show a global loading whenever a request against the server is pending.
@@ -48,7 +51,7 @@ export async function restRequest (partialUrl, method, data, raiseErrorDialog = 
   else {
     try {
       const response = await methodRef(partialUrl, data)
-      return response
+      return (response.data ? response.data : [200, 204].includes(response.status))
     } catch (e) {
       console.error('Svc request raised an error', e)
       Loading.hide()
@@ -58,6 +61,7 @@ export async function restRequest (partialUrl, method, data, raiseErrorDialog = 
           message: 'There was an error while performing a request. Please retry later.'
         })
       }
+      return false
     }
   }
 }

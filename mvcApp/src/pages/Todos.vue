@@ -55,6 +55,7 @@ export default {
   mounted: async function () {
     const { todos } = this.$services
     this.todos = await todos.list()
+    console.log('this.todos is', this.todos)
   }
 }
 </script>
