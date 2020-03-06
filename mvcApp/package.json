@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "quasar dev",
     "build": "quasar build",
+    "build-noenv": "quasar build --noenv",
     "build:pwa": "quasar build -m pwa",
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"No test specified\" && exit 0"

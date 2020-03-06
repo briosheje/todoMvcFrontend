@@ -1,0 +1,10 @@
+{
+  "ids": {
+    "Todo": 3
+  },
+  "models": {
+    "Todo": {
+      "2": "{\"id\":2,\"description\":\"Asdrubale\",\"completed\":true}"
+    }
+  }
+}

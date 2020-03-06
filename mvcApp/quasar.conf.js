@@ -1,7 +1,9 @@
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
 
-const envConfig = require('./envConfig.json')
+let envConfig = require('./envConfig.json')
+const isNoEnv = process.argv.includes('--noenv');
+if (isNoEnv) envConfig = { API_BASE_URL: '/' };
 
 module.exports = function (ctx) {
   return {
